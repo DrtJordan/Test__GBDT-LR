@@ -44,6 +44,9 @@ print
 'predict', roc_auc
 
 # fit one-hot编码器
+
+tmp = grd.apply(X_train)
+
 grd_enc.fit(grd.apply(X_train)[:, :, 0])
 
 # 使用训练好的GBDT模型构建特征，然后将特征经过one-hot编码作为新的特征输入到LR模型训练。
